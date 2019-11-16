@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D077D98237F412D00BE1AD5 /* CourseFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D077D97237F412D00BE1AD5 /* CourseFile.swift */; };
+		8D077D9A23807F2000BE1AD5 /* SemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */; };
 		8D8B0897237DEFFD00BD5439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */; };
 		8D8B0899237DEFFD00BD5439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */; };
-		8D8B089B237DEFFD00BD5439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B089A237DEFFD00BD5439 /* ViewController.swift */; };
 		8D8B089E237DEFFD00BD5439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8B089C237DEFFD00BD5439 /* Main.storyboard */; };
 		8D8B08A0237DEFFE00BD5439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8B089F237DEFFE00BD5439 /* Assets.xcassets */; };
 		8D8B08A3237DEFFE00BD5439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8B08A1237DEFFE00BD5439 /* LaunchScreen.storyboard */; };
+		8DECB4D5237E49610055B4D8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECB4D4237E49610055B4D8 /* File.swift */; };
+		8DECB4D7237E49DF0055B4D8 /* StudentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECB4D6237E49DF0055B4D8 /* StudentListTableViewController.swift */; };
+		8DECB4D9237E4A9C0055B4D8 /* AddStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECB4D8237E4A9C0055B4D8 /* AddStudentViewController.swift */; };
+		8DECB4DB237F36D90055B4D8 /* GPAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DECB4DA237F36D90055B4D8 /* GPAViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D077D97237F412D00BE1AD5 /* CourseFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseFile.swift; sourceTree = "<group>"; };
+		8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterTableViewController.swift; sourceTree = "<group>"; };
 		8D8B0893237DEFFD00BD5439 /* manjinder_c0762203_gpaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manjinder_c0762203_gpaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8D8B089A237DEFFD00BD5439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D8B089D237DEFFD00BD5439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D8B089F237DEFFE00BD5439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8B08A2237DEFFE00BD5439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8B08A4237DEFFE00BD5439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DECB4D4237E49610055B4D8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		8DECB4D6237E49DF0055B4D8 /* StudentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListTableViewController.swift; sourceTree = "<group>"; };
+		8DECB4D8237E4A9C0055B4D8 /* AddStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudentViewController.swift; sourceTree = "<group>"; };
+		8DECB4DA237F36D90055B4D8 /* GPAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPAViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +68,16 @@
 			children = (
 				8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */,
 				8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */,
-				8D8B089A237DEFFD00BD5439 /* ViewController.swift */,
 				8D8B089C237DEFFD00BD5439 /* Main.storyboard */,
 				8D8B089F237DEFFE00BD5439 /* Assets.xcassets */,
 				8D8B08A1237DEFFE00BD5439 /* LaunchScreen.storyboard */,
 				8D8B08A4237DEFFE00BD5439 /* Info.plist */,
+				8DECB4D4237E49610055B4D8 /* File.swift */,
+				8DECB4D6237E49DF0055B4D8 /* StudentListTableViewController.swift */,
+				8DECB4D8237E4A9C0055B4D8 /* AddStudentViewController.swift */,
+				8DECB4DA237F36D90055B4D8 /* GPAViewController.swift */,
+				8D077D97237F412D00BE1AD5 /* CourseFile.swift */,
+				8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */,
 			);
 			path = manjinder_c0762203_gpaApp;
 			sourceTree = "<group>";
@@ -138,7 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D8B089B237DEFFD00BD5439 /* ViewController.swift in Sources */,
+				8DECB4D5237E49610055B4D8 /* File.swift in Sources */,
+				8D077D9A23807F2000BE1AD5 /* SemesterTableViewController.swift in Sources */,
+				8D077D98237F412D00BE1AD5 /* CourseFile.swift in Sources */,
+				8DECB4D9237E4A9C0055B4D8 /* AddStudentViewController.swift in Sources */,
+				8DECB4D7237E49DF0055B4D8 /* StudentListTableViewController.swift in Sources */,
+				8DECB4DB237F36D90055B4D8 /* GPAViewController.swift in Sources */,
 				8D8B0897237DEFFD00BD5439 /* AppDelegate.swift in Sources */,
 				8D8B0899237DEFFD00BD5439 /* SceneDelegate.swift in Sources */,
 			);
