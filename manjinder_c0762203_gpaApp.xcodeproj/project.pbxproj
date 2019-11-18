@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D077D98237F412D00BE1AD5 /* CourseFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D077D97237F412D00BE1AD5 /* CourseFile.swift */; };
 		8D077D9A23807F2000BE1AD5 /* SemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */; };
+		8D077D9D2380B70500BE1AD5 /* Win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8D077D9C2380B70500BE1AD5 /* Win.wav */; };
+		8D077D9F2380D70500BE1AD5 /* grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D077D9E2380D70500BE1AD5 /* grades.swift */; };
 		8D8B0897237DEFFD00BD5439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */; };
 		8D8B0899237DEFFD00BD5439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */; };
 		8D8B089E237DEFFD00BD5439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8B089C237DEFFD00BD5439 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		8D077D97237F412D00BE1AD5 /* CourseFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseFile.swift; sourceTree = "<group>"; };
 		8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterTableViewController.swift; sourceTree = "<group>"; };
+		8D077D9C2380B70500BE1AD5 /* Win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Win.wav; sourceTree = "<group>"; };
+		8D077D9E2380D70500BE1AD5 /* grades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grades.swift; sourceTree = "<group>"; };
 		8D8B0893237DEFFD00BD5439 /* manjinder_c0762203_gpaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = manjinder_c0762203_gpaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D077D9B2380B6EE00BE1AD5 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				8D077D9C2380B70500BE1AD5 /* Win.wav */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		8D8B088A237DEFFC00BD5439 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +78,7 @@
 		8D8B0895237DEFFD00BD5439 /* manjinder_c0762203_gpaApp */ = {
 			isa = PBXGroup;
 			children = (
+				8D077D9B2380B6EE00BE1AD5 /* sounds */,
 				8D8B0896237DEFFD00BD5439 /* AppDelegate.swift */,
 				8D8B0898237DEFFD00BD5439 /* SceneDelegate.swift */,
 				8D8B089C237DEFFD00BD5439 /* Main.storyboard */,
@@ -77,6 +90,7 @@
 				8DECB4D8237E4A9C0055B4D8 /* AddStudentViewController.swift */,
 				8DECB4DA237F36D90055B4D8 /* GPAViewController.swift */,
 				8D077D97237F412D00BE1AD5 /* CourseFile.swift */,
+				8D077D9E2380D70500BE1AD5 /* grades.swift */,
 				8D077D9923807F2000BE1AD5 /* SemesterTableViewController.swift */,
 			);
 			path = manjinder_c0762203_gpaApp;
@@ -141,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8B08A3237DEFFE00BD5439 /* LaunchScreen.storyboard in Resources */,
+				8D077D9D2380B70500BE1AD5 /* Win.wav in Resources */,
 				8D8B08A0237DEFFE00BD5439 /* Assets.xcassets in Resources */,
 				8D8B089E237DEFFD00BD5439 /* Main.storyboard in Resources */,
 			);
@@ -160,6 +175,7 @@
 				8DECB4D7237E49DF0055B4D8 /* StudentListTableViewController.swift in Sources */,
 				8DECB4DB237F36D90055B4D8 /* GPAViewController.swift in Sources */,
 				8D8B0897237DEFFD00BD5439 /* AppDelegate.swift in Sources */,
+				8D077D9F2380D70500BE1AD5 /* grades.swift in Sources */,
 				8D8B0899237DEFFD00BD5439 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

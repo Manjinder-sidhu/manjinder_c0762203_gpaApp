@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import AVFoundation
 class GPAViewController: UIViewController {
     
     var GpaDelegate: SemesterTableViewController?
-    var curIndex = -1
+//    var curIndex = -1
     var GPA : Double = 0.0
-    
+    var audioplayer: AVAudioPlayer!
+    let soundArray = ["Win"]
     
     @IBOutlet weak var course1Label: UILabel!
     @IBOutlet weak var course2Label: UILabel!
@@ -36,15 +37,27 @@ class GPAViewController: UIViewController {
          Course5TF.resignFirstResponder()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        course1Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[0]
+         course2Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[1]
+        Course3Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[2]
+         course4label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[3]
+         course5Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[4]
+       
+    }
+    
     @IBOutlet weak var GPALabel: UILabel!
     
     var courses = [String]()
     var Credithours = [Double]()
     var GPAForEach = [Double]()
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+           
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
                self.view.addGestureRecognizer(tapgesture)
         // Do any additional setup after loading the view.
@@ -62,8 +75,8 @@ class GPAViewController: UIViewController {
             GPAForEach.append(GPAperSubject(points: Double(i)!))
         }
         
-        print(courses)
-        print(GPAForEach)
+//        print(courses)
+//        print(GPAForEach)
     }
     
     func getCreditHours(){
@@ -76,20 +89,9 @@ class GPAViewController: UIViewController {
     }
     
     
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        course1Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[0]
-         course2Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[1]
-        Course3Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[2]
-         course4label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[3]
-         course5Label.text = Semesters.Semester[(GpaDelegate?.curIndex)!].semesters[4]
-       
-    }
-    
+    // to fetch the particular GPA for course score
     
     func GPAperSubject(points : Double) -> Double {
-//        let Convert = Double(points)
         switch(points){
         case 0..<50:
           return   0.0
@@ -101,7 +103,9 @@ class GPAViewController: UIViewController {
            return  2.0
         case 67...69:
           return   2.3
-        case 70...76:
+        case 70...72:
+            return   2.7
+        case 73...76:
           return   3.0
         case 77...79:
           return   3.2
@@ -120,7 +124,25 @@ class GPAViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    
+    //calculate the total GPA
+    
     @IBAction func calculate(_ sender: UIButton) {
+        
+        
+        
+        if Course1TF.text == "" || Course2TF.text == "" || Course3TF.text == "" || Course4TF.text == "" || Course5TF.text == "" {
+        let alertcontroller3 = UIAlertController(title: "GPA calculation ", message: "May You have empty textfield", preferredStyle: .alert)
+        let CancelAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        alertcontroller3.addAction(CancelAction)
+        self.present(alertcontroller3, animated: true, completion:  nil)
+        
+        }
+        else if Course1TF.text != "" || Course2TF.text != "" || Course3TF.text != "" || Course4TF.text != "" || Course5TF.text != ""{
                     getGPA()
                     getCreditHours()
         
@@ -134,10 +156,37 @@ class GPAViewController: UIViewController {
         
         let result = ((s1 + s2 + s3 + s4 + s5) / sum)
         GPALabel.text =  String(format: "%.1f",result) + "/4"
-        GpaDelegate?.rightdetail(text: GPALabel.text!)
-        print(result)
-        
+            
+//            let a = grades(grade: GPALabel.text!)
+//            let b = grades(grade: "########")
+//      GpaDelegate?.GpaAtRight = "\(GPALabel.text!)"
+//            if (grades.gradepoints[(GpaDelegate?.curIndex)!].append == GPALabel.text!)  {
+//                grades.gradepoints[(GpaDelegate?.curIndex)!] = a
+//                grades.gradepoints[(GpaDelegate?.curIndex)!].grade = GPALabel.text!
+            
+            
+            grades[(GpaDelegate?.curIndex)!] =  GPALabel.text!
+////            }
+          
+//            grades.gradepoints.insert(a , at: GpaDelegate!.curIndex)
+            
+//            grades.gradepoints.append(a)
+                 
+//            print(grades.gradepoints as Any)
+            
+            print(grades)
+            
+        if result > 2.8{
+            let selectedButton = soundArray[sender.tag]
+            let soundURL = Bundle.main.url(forResource: selectedButton, withExtension: "wav")
+                audioplayer = try! AVAudioPlayer(contentsOf: soundURL!)
+                audioplayer.play()
         }
+
+        }
+        
+        
+}
         
     
     

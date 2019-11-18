@@ -38,16 +38,28 @@ class AddStudentViewController: UIViewController {
         StudentIDtextfield.resignFirstResponder()
     }
 
+    
+    // to save the new student
+    
     @IBAction func Save(_ sender: UIButton) {
+        if FirstNameTextfield.text == "" || LastNameTextfield.text == "" || StudentIDtextfield.text == "" {
+            let alertcontroller3 = UIAlertController(title: "New Contact ", message: "May You have empty textfield", preferredStyle: .alert)
+             let CancelAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+            alertcontroller3.addAction(CancelAction)
+                       self.present(alertcontroller3, animated: true, completion:  nil)
+            
+        }
+        
+        
+       else if FirstNameTextfield.text != nil && LastNameTextfield.text != nil && StudentIDtextfield.text != nil{
+        
         
         let alertcontroller = UIAlertController(title: "save student", message: "Are you Sure", preferredStyle: .alert)
-        
-        
         let CancelAction = UIAlertAction(title: "No way", style: .cancel, handler: nil)
         CancelAction.setValue(UIColor.brown, forKey: "titleTextColor")
-        let AddItemAction = UIAlertAction(title: "yes sure", style: .default){
+        let AddItemAction = UIAlertAction(title: "yes sure", style: .default)
+        {
             (action) in
-            
             
             let alertcontroller2 = UIAlertController(title: "New Contact saved", message: "\(self.FirstNameTextfield.text!) is now a student", preferredStyle: .alert)
                    
@@ -61,12 +73,9 @@ class AddStudentViewController: UIViewController {
                            self.FirstNameTextfield.text = nil
                            self.LastNameTextfield.text = nil
                            self.StudentIDtextfield.text = nil
-                       
-                       
 //                       print(Student.students)
             }
-            
-                
+        
             alertcontroller2.addAction(okAction)
             self.present(alertcontroller2, animated: true, completion:  nil)
         }
@@ -74,12 +83,10 @@ class AddStudentViewController: UIViewController {
         alertcontroller.addAction(CancelAction)
         alertcontroller.addAction(AddItemAction)
         self.present(alertcontroller, animated: true, completion:  nil)
+        }
+ }
         
-        
-        
-            
-        
-    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         studentdelegate?.tableView.reloadData()

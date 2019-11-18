@@ -14,15 +14,20 @@ class SemesterTableViewController: UITableViewController {
    var curIndex = -1
     var GpaAtRight = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let Sem_name1 = Semesters(semestername: "Semester 1",  semesters : ["MAD 3004","MAD 3115", "MAD 2303", "MAD 3463", "MAD 3125"])
-        let Sem_name2 = Semesters(semestername: "Semester 2",  semesters : ["MAD 3005","MAD 3115", "MAD 2303", "MAD 3463", "MAD 3125"])
-         let Sem_name3 = Semesters(semestername: "Semester 3",  semesters : ["MAD 3006","MAD 3115", "MAD 2303", "MAD 3463", "MAD 3125"])
-        Semesters.Semester.append(Sem_name1)
-        Semesters.Semester.append(Sem_name2)
-        Semesters.Semester.append(Sem_name3)
+        let Sem_name1 = Semesters(semestername: "Semester 1",  semesters : ["Course 1.1","Course 1.2", "Course 1.3", "Course 1.4", "Course 1.5"] )
+        let Sem_name2 = Semesters(semestername: "Semester 2",  semesters : ["Course 2.1","Course 2.2", "Course 2.3", "Course 2.4", "Course 2.5"])
+         let Sem_name3 = Semesters(semestername: "Semester 3",  semesters : ["Course 3.1","Course 3.2", "Course 3.3", "Course 3.4", "Course 3.5"])
+        Semesters.Semester = [Sem_name1, Sem_name2, Sem_name3]
         
+//        grades.gradepoints = []
+//        Semesters.Semester.append(Sem_name1)
+//        Semesters.Semester.append(Sem_name2)
+//        Semesters.Semester.append(Sem_name3)
+//
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,13 +55,19 @@ class SemesterTableViewController: UITableViewController {
         // Configure the cell...
         
         cell?.textLabel?.text = Semesters.Semester[indexPath.row].semestername
-        cell?.detailTextLabel?.text = GpaAtRight
+       
+//        if indexPath.row < grades.gradepoints.count  {
+//            let a = grades.gradepoints[indexPath.row].grade
+////            for a in grades.gradepoints{
+//                print(a)
+//        if grades.gradepoints != nil{
+//            cell?.detailTextLabel?.text =  grades.gradepoints[indexPath.row].grade
+//            }
+////        }
         
+        cell?.detailTextLabel?.text = grades[indexPath.row]
+       
         return cell!
-    }
-    
-    func rightdetail(text : String){
-        GpaAtRight = text
     }
     
     

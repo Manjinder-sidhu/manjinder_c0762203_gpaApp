@@ -16,6 +16,11 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
     @IBOutlet var tableview: UITableView!
     
     var filteredData: [Student]!
+//   func loadarray(){
+//       let a = grades(grade: "")
+//       grades.gradepoints = [a, a, a]
+//              
+//   }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +64,8 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
         
         cell?.textLabel?.text = "\(filteredData[indexPath.row].firstname) \(filteredData[indexPath.row].lastname)"
 //        print("cellll ", filteredData[indexPath.row].firstname)
+       
+//        cell?.detailTextLabel?.text = "\(sum )"
         return cell!
     }
     
@@ -87,13 +94,13 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
     */
 
     /*
-    // Override to support editing the table view.
+     Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+             Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+             Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     */
