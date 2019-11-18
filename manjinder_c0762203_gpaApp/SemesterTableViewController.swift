@@ -55,18 +55,9 @@ class SemesterTableViewController: UITableViewController {
         // Configure the cell...
         
         cell?.textLabel?.text = Semesters.Semester[indexPath.row].semestername
-       
-//        if indexPath.row < grades.gradepoints.count  {
-//            let a = grades.gradepoints[indexPath.row].grade
-////            for a in grades.gradepoints{
-//                print(a)
-//        if grades.gradepoints != nil{
-//            cell?.detailTextLabel?.text =  grades.gradepoints[indexPath.row].grade
-//            }
-////        }
         
-        cell?.detailTextLabel?.text = grades[indexPath.row]
-       
+//        cell?.detailTextLabel?.text = grades[indexPath.row]
+        cell?.detailTextLabel?.text = Semesters.Semester[indexPath.row].grades[indexPath.row]
         return cell!
     }
     

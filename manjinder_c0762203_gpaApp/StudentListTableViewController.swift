@@ -9,7 +9,7 @@
 import UIKit
 
 class StudentListTableViewController: UITableViewController, UISearchBarDelegate {
-    
+    var curIndex = -1
     
     @IBOutlet weak var searchbar: UISearchBar!
     
@@ -19,7 +19,7 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
 //   func loadarray(){
 //       let a = grades(grade: "")
 //       grades.gradepoints = [a, a, a]
-//              
+//
 //   }
     
     override func viewDidLoad() {
@@ -32,6 +32,12 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
 //        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
 //               self.view.addGestureRecognizer(tapgesture)
 
+        let toolbar = UIToolbar(frame: CGRect(origin: .zero, size: .init(width: view.frame.size.width, height: 30)))
+        let flexspace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let donebutton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(viewTapped))
+        toolbar.setItems([flexspace, donebutton], animated: false)
+        toolbar.sizeToFit()
+        searchbar.inputAccessoryView = toolbar
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,9 +53,10 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
 //        // #warning Incomplete implementation, return the number of sections
 //        return 1
 //    }
-//    @objc func viewTapped(){
+    @objc func viewTapped(){
 //        searchbar.resignFirstResponder()
-//    }
+        self.view.endEditing(true)
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return filteredData.count
@@ -78,6 +85,7 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
             // If dataItem matches the searchText, return true to include it
 //            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             let name = item.firstname + " " + item.lastname
+//            dismissKeyboard()
             return name.lowercased().contains(searchText.lowercased())
         }
         
@@ -130,6 +138,16 @@ class StudentListTableViewController: UITableViewController, UISearchBarDelegate
         if let addview = segue.destination as? AddStudentViewController{
         addview.studentdelegate = self
         }
+        
+//        if let studentdetail = segue.destination as? GPAViewController{
+//       studentdetail.GPA2delegate = self
+//            if let tableviewcell = sender as? UITableViewCell {
+//                if let index = tableView.indexPath(for: tableviewcell)?.row {
+//                   
+//                    curIndex = index
+//                }
+//            }
+//        }
     }
    
     override func viewWillAppear(_ animated: Bool) {

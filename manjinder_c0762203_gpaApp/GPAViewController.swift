@@ -157,24 +157,12 @@ class GPAViewController: UIViewController {
         let result = ((s1 + s2 + s3 + s4 + s5) / sum)
         GPALabel.text =  String(format: "%.1f",result) + "/4"
             
-//            let a = grades(grade: GPALabel.text!)
-//            let b = grades(grade: "########")
-//      GpaDelegate?.GpaAtRight = "\(GPALabel.text!)"
-//            if (grades.gradepoints[(GpaDelegate?.curIndex)!].append == GPALabel.text!)  {
-//                grades.gradepoints[(GpaDelegate?.curIndex)!] = a
-//                grades.gradepoints[(GpaDelegate?.curIndex)!].grade = GPALabel.text!
+
+            Semesters.Semester[(GpaDelegate?.curIndex)!].grades[(GpaDelegate?.curIndex)!] = GPALabel.text!
+//            grades[(GpaDelegate?.curIndex)!] =  GPALabel.text!
+
             
-            
-            grades[(GpaDelegate?.curIndex)!] =  GPALabel.text!
-////            }
-          
-//            grades.gradepoints.insert(a , at: GpaDelegate!.curIndex)
-            
-//            grades.gradepoints.append(a)
-                 
-//            print(grades.gradepoints as Any)
-            
-            print(grades)
+            print(Semesters.Semester[(GpaDelegate?.curIndex)!].grades)
             
         if result > 2.8{
             let selectedButton = soundArray[sender.tag]

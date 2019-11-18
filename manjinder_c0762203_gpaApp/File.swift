@@ -15,7 +15,8 @@ struct Student{
     var firstname : String
     var lastname : String
     var studentID : String
-   static var students = [Student]()
+ static var students = [Student]()
+   
 }
 
 

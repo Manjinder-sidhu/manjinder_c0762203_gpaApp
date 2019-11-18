@@ -10,6 +10,6 @@ import Foundation
 struct Semesters{
     var semestername : String
    var semesters = [String]()
- // var grades = ["", "", ""]
+  var grades = ["", "", ""]
    static var Semester = [Semesters]()
 }
